@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# create a new github repo by running this script, ie bash repo.sh new-repo
+# create a new github repo by running this script, ie sh repo.sh new-repo
 # make sure you change <name> to your github username
 
 # thanks to Michael Durrant
