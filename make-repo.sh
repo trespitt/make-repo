@@ -1,12 +1,23 @@
 #!/bin/bash
 
-# create a new github repo by running this script, ie sh repo.sh new-repo
-# make sure you change <name> to your github username
+# make sure you change tres-pitt to your github username
 
-# thanks to Michael Durrant
-# http://stackoverflow.com/questions/2423777/is-it-possible-to-create-a-remote-repo-on-github-from-the-cli-without-opening-br
+b='init'
+if [ $# -eq 0 ]
+  then
+	CURRENT=`pwd`
+	BASENAME=`basename "$CURRENT"`
 
-a='{"name":"'$1'"}'
-curl -u '<name>' https://api.github.com/user/repos -d $a
-git remote add origin 'git@github.com:<name>/'$1'.git'
+	b="$BASENAME"
+  else
+  	b=$1
+fi
+
+a='{"name":"'$b'"}'
+curl -u 'tres-pitt' https://api.github.com/user/repos -d $a
+git remote add origin 'git@github.com:tres-pitt/'$1'.git'
 git push origin master
+
+
+# http://stackoverflow.com/questions/2423777/is-it-possible-to-create-a-remote-repo-on-github-from-the-cli-without-opening-br
+# http://stackoverflow.com/questions/1371261/get-current-directory-name-without-full-path-in-bash-script
