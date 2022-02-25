@@ -15,7 +15,7 @@ fi
 
 a='{"name":"'$b'"}'
 curl -u 'tres-pitt' https://api.github.com/user/repos -d $a
-git remote add origin 'git@github.com:tres-pitt/'$1'.git'
+git remote add origin 'git@github.com:trespitt/'$1'.git'
 git push origin master
 
 
